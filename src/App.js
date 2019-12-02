@@ -8,6 +8,8 @@ import TimerContextProvider from './context/TimerContext';
 import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
 import About from './pages/About';
 import Timer from './pages/Timer';
+import Cycles from './components/Cycles';
+import Tabatas from './components/Tabatas';
 
 const Title = styled.h1`
   font-size: 1.5em;
@@ -27,7 +29,8 @@ function App() {
               <Preparation />
               <Workout />
               <Rest name='rest' color='red' />
-
+              <Cycles />
+              <Tabatas />
               <Link to='/timer'>Timer</Link>
             </Route>
             <Route exact path='/timer'>

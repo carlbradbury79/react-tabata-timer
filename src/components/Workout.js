@@ -7,24 +7,33 @@ const Work = styled.div`
 `;
 
 const Workout = () => {
-  const { tabata, increaseWorkout } = useContext(TimerContext);
-  const [workout, setWorkout] = useState(tabata.workout);
+  const { tabata, setTabata } = useContext(TimerContext);
 
   const increase = () => {
-    setWorkout(workout => workout + 1);
-    increaseWorkout(workout);
+    let p = tabata.workout + 1;
+    setTabata({ ...tabata, workout: p });
   };
 
   const decrease = () => {
-    setWorkout(workout => workout - 1);
-    increaseWorkout(workout);
+    let p = tabata.workout - 1;
+    setTabata({ ...tabata, workout: p });
   };
 
   return (
     <Work>
-      <h2>Workout {workout}</h2>
-      <button onClick={increase}>+</button>
-      <button onClick={decrease}>-</button>
+      <h2>Workout</h2>
+      <div className='timeContainer'>
+        <div className='btn' onClick={increase}>
+          <span>+</span>
+        </div>
+        <div className='time'>
+          <h3>{tabata.workout}</h3>
+          <p>seconds</p>
+        </div>
+        <div className='btn' onClick={decrease}>
+          <span>-</span>
+        </div>
+      </div>
     </Work>
   );
 };

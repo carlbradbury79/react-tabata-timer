@@ -11,23 +11,49 @@ const TimerContextProvider = props => {
     tabatas: 1
   });
 
-  const changeValue = (val, value) => {
-    console.log('val', val);
-    setTabata({ ...tabata, preparation: parseInt(value) });
-    console.log('welp', val, value);
+  // Old way of getting value
+  // const changeValue = (val, value) => {
+  //   console.log('val', val);
+  //   setTabata({ ...tabata, preparation: parseInt(value) });
+  //   console.log('welp', val, value);
+  // };
+
+  const editPreparation = value => {
+    setTabata({ ...tabata, preparation: value });
+    console.log('editPrep', tabata);
   };
 
-  const increaseWorkout = value => {
+  const editWorkout = value => {
     setTabata({ ...tabata, workout: value });
+    console.log('editWork', tabata);
   };
 
   const editRest = value => {
     setTabata({ ...tabata, rest: value });
+    console.log('editRest', tabata);
+  };
+
+  const editCycles = value => {
+    setTabata({ ...tabata, cycles: value });
+    console.log('editCycles', tabata);
+  };
+
+  const editTabatas = value => {
+    setTabata({ ...tabata, tabatas: value });
+    console.log('editTabatas', tabata);
   };
 
   return (
     <TimerContext.Provider
-      value={{ tabata, changeValue, increaseWorkout, editRest }}
+      value={{
+        tabata,
+        setTabata,
+        editWorkout,
+        editRest,
+        editCycles,
+        editTabatas,
+        editPreparation
+      }}
     >
       {props.children}
     </TimerContext.Provider>

@@ -3,33 +3,32 @@ import styled from 'styled-components';
 import { TimerContext } from '../context/TimerContext';
 
 const Work = styled.div`
-  background: var(--preparation-color);
-  border-radius: 5px;
+  background: var(--tabatas-color);
 `;
 
-const Preparation = () => {
+const Tabatas = () => {
   const { tabata, setTabata } = useContext(TimerContext);
 
   const increase = () => {
-    let p = tabata.preparation + 1;
-    setTabata({ ...tabata, preparation: p });
+    let p = tabata.tabatas + 1;
+    setTabata({ ...tabata, tabatas: p });
   };
 
   const decrease = () => {
-    let p = tabata.preparation - 1;
-    setTabata({ ...tabata, preparation: p });
+    let p = tabata.tabatas - 1;
+    setTabata({ ...tabata, tabatas: p });
   };
 
   return (
     <Work>
-      <h2>Preparation</h2>
+      <h2>Tabatas</h2>
       <div className='timeContainer'>
         <div className='btn' onClick={increase}>
           <span>+</span>
         </div>
         <div className='time'>
-          <h3>{tabata.preparation}</h3>
-          <p>seconds</p>
+          <h3>{tabata.tabatas}</h3>
+          {/* <p>seconds</p> */}
         </div>
         <div className='btn' onClick={decrease}>
           <span>-</span>
@@ -39,4 +38,4 @@ const Preparation = () => {
   );
 };
 
-export default Preparation;
+export default Tabatas;

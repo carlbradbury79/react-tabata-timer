@@ -61,7 +61,7 @@ const Timer = () => {
         }
 
         // Change cycles
-        if (rest === 0 && cycles > 1 && workout === 0) {
+        if (rest === -1 && cycles > 1 && workout === -1) {
           console.log('Change cycle');
           console.log(preparation, workout, rest, cycles, tabatas);
 
@@ -71,7 +71,7 @@ const Timer = () => {
         }
 
         // Change tabatas
-        if (rest === 0 && cycles === 0 && workout === 0 && tabatas > 1) {
+        if (rest === -1 && cycles === 1 && workout === -1 && tabatas > 1) {
           setCycles(tabata.cycles);
           setWorkout(tabata.workout);
           setRest(tabata.rest);

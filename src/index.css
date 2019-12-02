@@ -1,5 +1,21 @@
-body {
+:root {
+  --preparation-color: orange;
+  --workout-color: green;
+  --rest-color: red;
+  --cycles-color: blue;
+  --tabatas-color: purple;
+  --light-color: #ddd;
+  --dark-color: #333;
+  --white-color: white;
+}
+
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -17,4 +33,31 @@ code {
   background: #000;
   margin: 0 auto;
   text-align: center;
+}
+
+.timeContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.btn {
+  width: 33%;
+  border-radius: 10px;
+  border: 1px solid black;
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn span {
+  font-size: 40px;
+}
+
+.time {
+  width: 33%;
+  border-radius: 10px;
+  border: 1px solid black;
+  user-select: none;
 }
