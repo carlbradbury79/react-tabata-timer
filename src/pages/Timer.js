@@ -24,7 +24,7 @@ const Timer = () => {
 
   function getBackground() {
     if (place === 'Prepare') {
-      return 'yellow';
+      return 'orange';
     } else if (place === 'Workout') {
       return 'green';
     } else if (place === 'Rest') {
@@ -101,7 +101,9 @@ const Timer = () => {
       <h1>{currentValue}</h1>
       <h2 onClick={toggle}>{place}</h2>
       <button
-        className={`button-primary-${isActive ? 'active' : 'inactive'}`}
+        className={`startTabataButton button-primary-${
+          isActive ? 'active' : 'inactive'
+        }`}
         onClick={toggle}
       >
         {isActive ? 'Pause' : 'Start'}

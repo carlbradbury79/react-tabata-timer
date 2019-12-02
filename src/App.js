@@ -10,6 +10,7 @@ import About from './pages/About';
 import Timer from './pages/Timer';
 import Cycles from './components/Cycles';
 import Tabatas from './components/Tabatas';
+import StartTabataButton from './components/StartTabataButton';
 
 const Title = styled.h1`
   font-size: 1.5em;
@@ -31,7 +32,8 @@ function App() {
               <Rest name='rest' color='red' />
               <Cycles />
               <Tabatas />
-              <Link to='/timer'>Timer</Link>
+              <StartTabataButton />
+              {/* <Link to='/timer'>Start Tabata Workout</Link> */}
             </Route>
             <Route exact path='/timer'>
               <Timer />

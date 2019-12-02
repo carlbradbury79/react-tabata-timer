@@ -28,6 +28,16 @@ code {
     monospace;
 }
 
+a {
+  color: var(--light-color);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+a:hover {
+  color: red;
+}
+
 .App {
   max-width: 400px;
   background: #000;
@@ -60,4 +70,20 @@ code {
   border-radius: 10px;
   border: 1px solid black;
   user-select: none;
+}
+
+.startTabataButton {
+  padding: 10px;
+  border: 1px solid black;
+  background: var(--light-color);
+  color: var(--dark-color);
+  text-decoration: none;
+  cursor: pointer;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+.startTabataButton:hover {
+  background: var(--dark-color);
+  color: var(--light-color);
 }
